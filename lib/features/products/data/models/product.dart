@@ -2,10 +2,10 @@ import 'package:clean_app/features/products/domain/entities/product.dart';
 
 class ProductModel extends ProductEntity {
   const ProductModel({
-    String? id,
-    String? productName,
-    String? description,
-    double? price,
+    super.id,
+    super.productName,
+    super.description,
+    super.price,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> map) {

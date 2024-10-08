@@ -3,10 +3,10 @@ import 'package:clean_app/core/usecases/usecase.dart';
 import 'package:clean_app/features/products/domain/entities/product.dart';
 import 'package:clean_app/features/products/domain/repository/product_repository.dart';
 
-class GetProductUseCase
+class GetProductsUseCase
     implements Usecase<DataState<List<ProductEntity>>, void> {
   final ProductRepository _productRepository;
-  GetProductUseCase(this._productRepository);
+  GetProductsUseCase(this._productRepository);
 
   @override
   Future<DataState<List<ProductEntity>>> call({void params}) {
