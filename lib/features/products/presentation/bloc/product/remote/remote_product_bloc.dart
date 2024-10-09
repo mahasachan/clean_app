@@ -14,12 +14,9 @@ class RemoteProductBloc extends Bloc<RemoteProductEvent, RemoteProductState> {
   void onGetProducts(
       GetProducts event, Emitter<RemoteProductState> emit) async {
     final dataState = await _getProductsUseCase.call();
-    print('dataState: $dataState');
     if (dataState is DataSuccess && dataState.data!.isNotEmpty) {
       emit(RemoteProductsDone(dataState.data!));
     } else {
-      print('data ${dataState.data}');
-      print('exception: ${dataState.exception}');
       emit(RemoteProductsError(dataState.exception!));
     }
   }

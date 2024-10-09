@@ -1,5 +1,7 @@
 import 'package:clean_app/features/products/presentation/bloc/product/remote/remote_product_bloc.dart';
+import 'package:clean_app/features/products/presentation/bloc/product/remote/remote_product_event.dart';
 import 'package:clean_app/features/products/presentation/bloc/product/remote/remote_product_state.dart';
+import 'package:clean_app/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,9 +10,12 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppbar(context),
-      body: _buildBody(),
+    return BlocProvider<RemoteProductBloc>(
+      create: (_) => sl()..add(const GetProducts()),
+      child: Scaffold(
+        appBar: _buildAppbar(context),
+        body: _buildBody(),
+      ),
     );
   }
 

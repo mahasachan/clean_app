@@ -1,4 +1,5 @@
 import 'package:clean_app/features/products/presentation/pages/product.dart';
+import 'package:clean_app/features/theme/presentation/pages/theme_app.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -7,7 +8,7 @@ class AppRoutes {
       case '/':
         return _materialRoute(const Products());
       case '/theme':
-        return _materialRoute(const Products());
+        return _materialRoute(const ThemeApp());
       default:
         return _materialRoute(const Products());
     }
